@@ -8,7 +8,7 @@
             ;(function () {
                 if (!window.parent) return
                 const hasCookie = /g=1/.test(document.cookie)
-                const msg = hasCookie ? "supported" : "unsupported"
+                const msg = hasCookie ? "cookieSet" : "cookieNotSet"
                 window.parent.postMessage(msg, "*")
             })()
     </script>
