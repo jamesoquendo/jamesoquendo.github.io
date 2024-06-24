@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Third-Party Cookie Test Page</title>
+    </head>
+    <body>
+        <script>
+            document.cookie = 'g=1; secure=true; samesite=none; path=/';
+            ;(function () {
+                if (!window.parent) return
+                const hasCookie = /g=1/.test(document.cookie)
+                const msg = hasCookie ? "supported" : "unsupported"
+                window.parent.postMessage(msg, "*")
+            })()
+    </script>
+    </body>
+</html>
